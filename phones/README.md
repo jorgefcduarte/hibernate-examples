@@ -22,4 +22,4 @@ http://localhost:8080/h2-console/
 username: sa  
 password: password
 
-**OBS.: This project is simplified for learning reasons. So don't expect uses of fancy design patterns here.**
+**OBS.: This project is simplified for learning purposes. So don't expect uses of fancy design patterns here.**
