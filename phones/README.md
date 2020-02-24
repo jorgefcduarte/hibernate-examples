@@ -12,4 +12,7 @@ Before run:
     Windows: spring.datasource.url=jdbc:h2:file:C://tmp/database_
 
 Running the project
+
 1. Inside your IDE, run the class App.java as a regular java console.
+
+**OBS.: This project is simplified for learning reasons. So don't expect uses of fancy design patterns here.**
