@@ -1,6 +1,6 @@
-# Hibernate example using Restrictions.like using a List of parameters
+# Web API of a simple phone list
 
-This is a simple project that shows a workaround of an hibernate criteria query that receives a list of phone numbers then uses it in a Criterion's Restrictions.like in conjuntion with a Restrictions.or.
+This is a simple project of an web API that shows a workaround of an hibernate criteria query that receives a list of phone numbers then uses it in a Criterion's Restrictions.like in conjuntion with a Restrictions.or.
 
 This project has made using:
  - [Springboot](https://spring.io/projects/spring-boot) 
