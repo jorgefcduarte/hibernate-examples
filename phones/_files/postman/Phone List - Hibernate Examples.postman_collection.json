@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "6c5cf9f9-632d-4b4d-90a9-8534803b03c2",
+		"name": "Phone List - Hibernate Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Phone",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"number\": \"(64)9002-0202\"\n}"
+				},
+				"url": {
+					"raw": "{{api_url}}/phones",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"phones"
+					]
+				},
+				"description": "Saves a phone."
+			},
+			"response": []
+		},
+		{
+			"name": "Phones by numbers (or part of then)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"(81)6565\",\"8777\", \"9898\"]"
+				},
+				"url": {
+					"raw": "{{api_url}}/phones",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"phones"
+					]
+				},
+				"description": "Search phones by numbers or part of then."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c6e4f915-3535-4470-a127-efe2c308edcd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d575a960-fd0c-4788-98c7-6e01bd9b3639",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "eec75152-2072-4ee8-9bb5-f61f261e3445",
+			"key": "api_url",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

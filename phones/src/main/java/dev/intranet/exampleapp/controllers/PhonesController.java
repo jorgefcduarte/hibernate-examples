@@ -8,10 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @RestController
 @CrossOrigin
@@ -49,13 +47,10 @@ public class PhonesController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> all(){
+    public ResponseEntity<?> all(@RequestBody List<String> numbers){
 
         try {
-
-            Set<String> numbersToFind = new HashSet<>(Arrays.asList("(81)6565-1234", "(11)7378-8777"));
-
-            List<Phone> phones = phoneRepository.byNumbers(numbersToFind);
+            List<Phone> phones = phoneRepository.byNumbers(new HashSet<>(numbers));
             return ResponseEntity.ok().body(phones);
         } catch (Exception ex) {
             return ResponseEntity.badRequest().body("There was an error searching the phones.");
@@ -64,7 +59,7 @@ public class PhonesController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> add(Phone phone) {
+    public ResponseEntity<?> add(@RequestBody Phone phone) {
         try {
             return ResponseEntity.ok(phoneRepository.save(phone));
         } catch (Exception ex) {
